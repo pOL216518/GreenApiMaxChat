@@ -1,0 +1,159 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.instance {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.logout {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.logout:hover {
+  background: var(--surface-hover);
+}
+
+.error {
+  margin: 4px 16px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgb(229 72 77 / 10%);
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.newChat {
+  padding: 8px 16px 12px;
+}
+
+.newChatRow {
+  display: flex;
+  gap: 8px;
+}
+
+.search {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--surface-hover);
+  outline: none;
+}
+
+.search:focus {
+  border-color: var(--accent);
+}
+
+.create {
+  padding: 0 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.create:not(:disabled):hover {
+  background: var(--accent-hover);
+}
+
+.formError {
+  margin: 6px 2px 0;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.placeholder {
+  margin: 24px 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.list {
+  flex: 1;
+  margin: 0;
+  padding: 0 8px 8px;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+}
+
+.item:hover {
+  background: var(--surface-hover);
+}
+
+.item[aria-current='true'] {
+  background: var(--surface-active);
+}
+
+.itemBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.itemTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.itemTitle {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemTime {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.itemPreview {
+  color: var(--text-muted);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
