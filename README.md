@@ -1,32 +1,46 @@
-# React + TypeScript + Vite
+# MAX Chat
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Веб-интерфейс для отправки и получения текстовых сообщений в мессенджере **MAX** через [GREEN-API](https://green-api.com/max). Внешний вид взят с [web.max.ru](https://web.max.ru/).
 
-Currently, two official plugins are available:
+**Демо:** <ссылка на Vercel>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Возможности
 
-## React Compiler
+- Вход по данным инстанса GREEN-API (`apiUrl`, `idInstance`, `apiTokenInstance`) с проверкой авторизации.
+- Создание чата по номеру телефона получателя (РФ `+7`, РБ `+375`).
+- Отправка сообщений методом [SendMessage](https://green-api.com/v3/docs/api/sending/SendMessage/).
+- Получение сообщений по технологии [HTTP API](https://green-api.com/v3/docs/api/receiving/technology-http-api/): `receiveNotification` → обработка → `deleteNotification`.
+- Статусы доставки, сохранение истории между перезагрузками, мобильная вёрстка и тёмная тема.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Локальный запуск
 
-## Expanding the Oxlint configuration
+Нужен Node.js 20 или новее.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+git clone <ссылка на репозиторий>
+cd max-chat
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Откройте http://localhost:5175.
+
+## Настройка GREEN-API
+
+1. Создайте инстанс MAX в [личном кабинете](https://console.green-api.com) и авторизуйте аккаунт MAX по QR-коду.
+2. В настройках инстанса оставьте `webhookUrl` пустым и включите получение входящих уведомлений. Для статусов доставки включите ещё уведомления об исходящих сообщениях.
+3. Введите `apiUrl`, `idInstance` и `apiTokenInstance` из карточки инстанса на странице входа.
+
+## Скрипты
+
+| Команда         | Описание                   |
+| --------------- | -------------------------- |
+| `npm run dev`   | запуск в режиме разработки |
+| `npm run build` | продакшн-сборка            |
+| `npm run lint`  | проверка ESLint            |
+| `npm test`      | unit-тесты                 |
+| `npm run check` | типы, линтер и тесты       |
+
+## Стек
+
+React 19, TypeScript, Vite, CSS Modules, ESLint, Prettier, Vitest, husky, lint-staged.

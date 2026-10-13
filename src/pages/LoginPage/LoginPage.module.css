@@ -30,6 +30,12 @@
   font-weight: 700;
 }
 
+.logo img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
 .title {
   margin: 0;
   text-align: center;

@@ -3,7 +3,7 @@ import { useAuth } from '../../context/authContextValue';
 import { getErrorMessage } from '../../utils/getErrorMessage';
 import styles from './LoginPage.module.css';
 
-const DEFAULT_API_URL = 'https://api.green-api.com'; // заменить
+const DEFAULT_API_URL = 'https://api.green-api.com';
 
 export function LoginPage() {
   const { login } = useAuth();
@@ -35,8 +35,8 @@ export function LoginPage() {
   return (
     <main className={styles.page}>
       <form className={styles.card} onSubmit={(e) => void handleSubmit(e)}>
-        <div className={styles.logo} aria-hidden>
-          M
+        <div className={styles.logo}>
+          <img src="/favicon.svg" alt="" />
         </div>
         <h1 className={styles.title}>Вход в MAX Chat</h1>
         <p className={styles.subtitle}>
