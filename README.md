@@ -2,7 +2,7 @@
 
 Веб-интерфейс для отправки и получения текстовых сообщений в мессенджере **MAX** через [GREEN-API](https://green-api.com/max). Внешний вид взят с [web.max.ru](https://web.max.ru/).
 
-**Демо:** <ссылка на Vercel>
+**Демо:** <https://green-api-max-chat-phi.vercel.app/>
 
 ## Возможности
 
